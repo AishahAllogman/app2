@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+</head>
+<body style="padding:40px ">
+
+<div >
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <label for="FirstName">Education</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select degree</option>
+                    <option value="1">Diploma</option>
+                    <option value="2">Bachelor's</option>
+                    <option value="3">Master</option>
+                  </select>
+        
+                  <div class="form-group">
+                      <label>Major</label>
+                      <input type="text" formControlName="major" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.major.errors }" [(ngModel)]="major"  />
+                      <div *ngIf="submitted && f.major.errors" class="invalid-feedback">
+                          <div *ngIf="f.major.errors.required">First Name is required</div>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>College</label>
+  <input type="text" formControlName="College" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.College.errors }"  [(ngModel)]="College"  />
+                      <div *ngIf="submitted && f.College.errors" class="invalid-feedback">
+                          <div *ngIf="f.College.errors.required">Last Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>YEAR</label>
+                      <input type="text" formControlName="YEAR" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.YEAR.errors }"  [(ngModel)]="YEAR"/>
+                      <div *ngIf="submitted && f.YEAR.errors" class="invalid-feedback">
+                          <div *ngIf="f.YEAR.errors.required">YEAR is required</div>
+                          
+                      </div>
+                  </div>
+                 
+                  <div class="form-group">
+                     
+                        <button (click)="signup()" class="btn btn-primary">submit</button>   : {{status}}
+                 

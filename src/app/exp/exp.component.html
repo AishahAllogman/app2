@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+</head>
+<body style="padding:40px ">
+ 
+<div >
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label>Company Name</label>
+                      <input type="text" formControlName="CompanyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CompanyName.errors }" [(ngModel)]="CompanyName"  />
+                      <div *ngIf="submitted && f.CompanyName.errors" class="invalid-feedback">
+                          <div *ngIf="f.CompanyName.errors.required">First Name is required</div>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Postion</label>
+  <input type="text" formControlName="Postion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Postion.errors }"  [(ngModel)]="Postion"  />
+                      <div *ngIf="submitted && f.Postion.errors" class="invalid-feedback">
+                          <div *ngIf="f.Postion.errors.required">Last Name is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Resone For Leaving</label>
+                      <input type="text" formControlName="ResoneForLeaving" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ResoneForLeaving.errors }"  [(ngModel)]="ResoneForLeaving"/>
+                      <div *ngIf="submitted && f.ResoneForLeaving.errors" class="invalid-feedback">
+                          <div *ngIf="f.ResoneForLeaving.errors.required">Email is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      
+                <button (click)="signup()" class="btn btn-primary">submitted </button>   : {{status}}
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
