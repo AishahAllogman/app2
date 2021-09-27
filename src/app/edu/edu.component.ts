@@ -14,6 +14,7 @@ status = 'You haven\'t   submitted yet';
 major='';
 College='';
 YEAR='';
+degree='';
 submitted = false;
 registerForm: FormGroup;
 
@@ -25,9 +26,10 @@ signup() {
    
 ngOnInit() {
   this.registerForm = this.formBuilder.group({
+      degree: ['', Validators.required],
       major: ['', Validators.required],
-      College: ['', [Validators.required, Validators.email]],
-      YEAR: ['', [Validators.required, Validators.minLength(6)]]
+      College: ['', [Validators.required]],
+      YEAR: ['', [Validators.required]]
   });
 }
    
@@ -36,6 +38,7 @@ get f() { return this.registerForm.controls; }
 onSubmit() {
 
   this.submitted = true;
+  console.log( this.degree);
   console.log( this.major);
   console.log( this.College);
   console.log( this.YEAR);

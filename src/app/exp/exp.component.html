@@ -17,7 +17,7 @@
                       <label>Company Name</label>
                       <input type="text" formControlName="CompanyName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CompanyName.errors }" [(ngModel)]="CompanyName"  />
                       <div *ngIf="submitted && f.CompanyName.errors" class="invalid-feedback">
-                          <div *ngIf="f.CompanyName.errors.required">First Name is required</div>
+                          <div *ngIf="f.CompanyName.errors.required">company Name is required</div>
                       </div>
                   </div>
                   
@@ -25,14 +25,14 @@
                       <label>Postion</label>
   <input type="text" formControlName="Postion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Postion.errors }"  [(ngModel)]="Postion"  />
                       <div *ngIf="submitted && f.Postion.errors" class="invalid-feedback">
-                          <div *ngIf="f.Postion.errors.required">Last Name is required</div>
+                          <div *ngIf="f.Postion.errors.required">postion  is required</div>
                       </div>
                   </div>
                   <div class="form-group">
                       <label>Resone For Leaving</label>
                       <input type="text" formControlName="ResoneForLeaving" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ResoneForLeaving.errors }"  [(ngModel)]="ResoneForLeaving"/>
                       <div *ngIf="submitted && f.ResoneForLeaving.errors" class="invalid-feedback">
-                          <div *ngIf="f.ResoneForLeaving.errors.required">Email is required</div>
+                          <div *ngIf="f.ResoneForLeaving.errors.required">Resone For Leaving is required</div>
                       </div>
                   </div>
                   <div class="form-group">

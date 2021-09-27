@@ -14,18 +14,19 @@
           <div class="col-md-6 offset-md-3">
               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <label for="FirstName">Education</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select degree</option>
-                    <option value="1">Diploma</option>
-                    <option value="2">Bachelor's</option>
-                    <option value="3">Master</option>
-                  </select>
+                <div class="form-group">
+                    <label >degree</label>
+                    <input type="text" formControlName="degree" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.degree.errors }" [(ngModel)]="degree"  />
+                    <div *ngIf="submitted && f.degree.errors" class="invalid-feedback">
+                        <div *ngIf="f.degree.errors.required">degree is required</div>
+                    </div>
+                </div>
         
                   <div class="form-group">
                       <label>Major</label>
                       <input type="text" formControlName="major" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.major.errors }" [(ngModel)]="major"  />
                       <div *ngIf="submitted && f.major.errors" class="invalid-feedback">
-                          <div *ngIf="f.major.errors.required">First Name is required</div>
+                          <div *ngIf="f.major.errors.required">Major is required</div>
                       </div>
                   </div>
                   
@@ -33,7 +34,7 @@
                       <label>College</label>
   <input type="text" formControlName="College" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.College.errors }"  [(ngModel)]="College"  />
                       <div *ngIf="submitted && f.College.errors" class="invalid-feedback">
-                          <div *ngIf="f.College.errors.required">Last Name is required</div>
+                          <div *ngIf="f.College.errors.required">College is required</div>
                       </div>
                   </div>
                   <div class="form-group">
